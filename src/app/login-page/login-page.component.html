@@ -1,0 +1,36 @@
+<div class="alert alert-warning" *ngIf="error">
+    {{error}}
+</div>
+<div class="alert alert-warning" *ngIf="message">
+    {{message}}
+</div>
+<div class="text-center mt-5" *ngIf="isLoading">
+    <app-spinner></app-spinner>
+</div>
+
+<div class="row">
+    <div class="col-md-4 offset-md-4 mt-4">
+        <form action="#" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+            <div class="card bg-secondary text-light">
+                <div class="card-header text-center fw-bolder">Login</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control mb-4" id="email" name="email" ngModel #email="ngModel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control mb-4" id="password" name="password" ngModel #password="ngModel">
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <div class="text-center">
+                        <button class="btn btn-light btn-outline-success fw-bolder mt-4" type="submit">Login</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="alert alert-warning" *ngIf="decider && error">
+    {{error}}
+</div>
+<div class="alert alert-warning" *ngIf=" message">
+    {{message}}
+</div>
+<div class="text-center mt-5" *ngIf="isLoading">
+    <app-spinner></app-spinner>
+</div>
+
+<div class="row">
+    <div class="col-md-4 offset-md-4 mt-4">
+        <form action="#" #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)">
+            <div class="card bg-dark text-light shadow-sm">
+                <div class="card-header text-info text-center fw-bolder">REGISTER</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" class="form-control mb-4" id="fullname" name="fullname" ngModel #fullname="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control mb-4" id="email" name="email" ngModel #email="ngModel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control mb-4" id="password" name="password" ngModel #password="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select class="form-control mb-4" id="role" name="role" ngModel #role="ngModel">
+                            <option value="">---Select Your Option---</option>
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <div class="text-center">
+                        <button class="btn btn-primary mt-4" type="submit">Register</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
